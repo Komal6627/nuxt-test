@@ -22,7 +22,7 @@
         />
         <br>
         <!-- <button @click="userLogin">Login</button> -->
-          <NuxtLink v-slot="{ navigate }" to="/register" custom>
+          <NuxtLink v-slot="{ navigate }" to="/bookSlot" custom>
             <button @click="navigate" class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">
                Book slot
             </button>
