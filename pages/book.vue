@@ -72,11 +72,7 @@ export default {
   methods: {
     formSubmit(event) {
       event.preventDefault();
-       const d = new Date("02/08/2022");
-       let min = d.setMinutes(d.getMinutes());
-       let tm =d.toLocaleTimeString();
-       console.log(min);
-       console.log(tm);
+      
       },
     },
   }
