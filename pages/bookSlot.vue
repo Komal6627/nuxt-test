@@ -1,29 +1,44 @@
 <template>
   <div>
-     <button
-        class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2"
-        @click="showSlots"
-      >
-        showSlots
-      </button>
-       <div class="m-1 flex flex-wrap">
+    <button
+      class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2"
+      @click="showSlots"
+    >
+      showSlots
+    </button>
+    <div class="m-1 flex flex-wrap">
       <div
         class="bg-green-400 border-4 border-black text-center w-1/4 m-2"
         v-for="item in timeSlots"
         :key="item"
         id="idx"
       >
+        <div>
+          <div
+            class="text-center"
+            v-for="(item, index) in users"
+            v-bind:index="index"
+            :key="item"
+          >
+            <p class="text-lg font-semibold">
+              Slot No:{{ (item.id = index + 1) }}
+            </p>
+            <p class="text-lg font-semibold">Name:{{ item.fullname }}</p>
+            <p class="text-lg font-semibold">Mobile No:{{ item.number }}</p>
+          </div>
+        </div>
+
         <div class="font-bold text-xl p-5">Start Time {{ item.startTime }}</div>
         <div class="font-bold text-xl p-5">End Time {{ item.endTime }}</div>
         <button
-        class="bg-black  text-white font-bold py-2 px-4 rounded mb-1"
-        @click="book"
-      >
-       Book Now
-      </button>
+          class="bg-black text-white font-bold py-2 px-4 rounded mb-1"
+          @click="book"
+        >
+          <label for="fullname"> Book Now </label>
+        </button>
       </div>
 
-      <div class="container mx-auto p-8">
+      <div v-if="formshow == true" class="container mx-auto p-8">
         <h1 class="font-bold text-2xl text-center">Contact Details</h1>
         <main class="flex justify-center w-full h-screen">
           <div>
@@ -54,7 +69,6 @@
                 />
                 <br /><br />
                 <div>
-                 
                   <button
                     class="py-1 px-5 mr-5 bg-black hover:bg-blue-400 text-white font-bold text-center rounded-md mb-3"
                     type="submit"
@@ -101,7 +115,6 @@
         </main>
       </div>
     </div>
-     
   </div>
 </template>
 <script>
@@ -110,6 +123,7 @@ export default {
     return {
       timeSlots: [],
       isEdit: false,
+      formshow: false,
       indexEdit: -1,
       users: [],
       user: {
@@ -139,6 +153,8 @@ export default {
     book() {
       alert("Your slot is booked");
       document.getElementById("idx").style.backgroundColor = "red";
+
+      this.formshow = true;
     },
     formSubmit(event) {
       event.preventDefault();

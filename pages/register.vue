@@ -4,7 +4,7 @@
     <main class="flex justify-center w-full h-screen">
       <div>
         <form
-          @submit="formSubmit"
+          @submit="formSubmit" 
           class="bg-cyan-300 border-black rounded-lg border-2 px-12"
         >
           <table>

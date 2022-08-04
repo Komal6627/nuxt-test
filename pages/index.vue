@@ -1,15 +1,16 @@
 <template>
   <div>
+    <h1 class="text-center text-3xl font-bold m-5">Hospital Management</h1>
     <div class="text-center">
-      <h1 class="text-2xl font-bold">Admin Login</h1>
+      <h1 class="text-2xl font-bold m-3">Login</h1>
       <form @submit="userLogin">
         <label for="user">Select: </label>
 
-        <select name="user" id="user"  class="border-black border-2 m-1">
-          <option value="staf">Staf</option>
+        <select name="user" id="user" class="border-black border-2 m-1 ml-3">
+          <option value="staff">Staff</option>
           <option value="user">User</option>
         </select>
-        <br>
+        <br />
         <label for="name">User Name:</label>
         <input
           type="text"
