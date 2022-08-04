@@ -3,7 +3,7 @@
     <div class="text-center">
       <h1 class="text-2xl font-bold">Admin Login</h1>
       <form @submit="userLogin">
-        <label for="name">Admin Name:</label>
+        <label for="name">User Name:</label>
         <input
           type="text"
           id="name"
@@ -27,6 +27,7 @@
                Book slot
             </button>
         </NuxtLink>
+      
       </form>
     </div>
   </div>
@@ -47,6 +48,10 @@ export default {
       event.preventDefault();
       alert("You Logged in");
     },
+    bookSlot(event){
+      alert("Your slot is booked");
+
+    }
   },
 };
 </script>
